@@ -47,3 +47,8 @@ bills_norms = (bills - np.min(bills)) / (np.max(bills) - np.min(bills))
 print(np.round(bills_norms,2))
 
 #Standardisation 
+bill_std = (bills - np.mean(bills)) / np.std(bills)
+print(np.round(bill_std,2))
+
+#Correlation 
+# Correlation matrix — rows and columns are [ages, bills]
