@@ -32,23 +32,41 @@ ages = np.array([23,34,56,41,52])
 # print(bills_total)
 
 #percentiles
-p25= np.percentile(bills,25)
-p50 = np.percentile(bills,50)
-p75 = np.percentile(bills,75)
-iqr = p75-p25  
-print(f"Q1={p25} Q2={p50} Q3={p75} Iqr={iqr}")
+# p25= np.percentile(bills,25)
+# p50 = np.percentile(bills,50)
+# p75 = np.percentile(bills,75)
+# iqr = p75-p25  
+# print(f"Q1={p25} Q2={p50} Q3={p75} Iqr={iqr}")
 #Outlier detection using IQR 
-lower_fence = p25-1.5*iqr
-upper_fence = p50+1.5*iqr
-outlier = bills[(bills < lower_fence) | (bills > upper_fence)]
-print(f"Outliers {outlier}")
+# lower_fence = p25-1.5*iqr
+# upper_fence = p50+1.5*iqr
+# outlier = bills[(bills < lower_fence) | (bills > upper_fence)]
+# print(f"Outliers {outlier}")
 # Normalisation — scale all values to 0-1 range
-bills_norms = (bills - np.min(bills)) / (np.max(bills) - np.min(bills))
-print(np.round(bills_norms,2))
+# bills_norms = (bills - np.min(bills)) / (np.max(bills) - np.min(bills))
+# print(np.round(bills_norms,2))
 
 #Standardisation 
-bill_std = (bills - np.mean(bills)) / np.std(bills)
-print(np.round(bill_std,2))
+# bill_std = (bills - np.mean(bills)) / np.std(bills)
+# print(np.round(bill_std,2))
 
 #Correlation 
 # Correlation matrix — rows and columns are [ages, bills]
+# corr_matrix= np.corrcoef(bills, ages)
+# print(corr_matrix)
+# print(f'Correlation {corr_matrix[0,1]:.2f}')
+
+#2D array operations — operating on a whole table
+patients = np.array([
+    [23,8000,9],
+    [45,89000,10],
+    [32,7800,4],
+    [39,6500,7]
+])
+# Column-wise aggregates — axis=0 means "collapse down the rows"
+col_mean= np.mean(patients,axis=0)
+print(col_mean)
+
+# Row-wise aggregates — axis=1 means "collapse across the columns"
+col_sum = np.sum(patients,axis=1)
+print(col_sum)
