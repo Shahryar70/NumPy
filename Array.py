@@ -29,12 +29,26 @@ bills = np.array([5000,12000,9000,8000,14000])
 # print(patient_table[1,2])
 # print(patient_table[2,1])
 
-print(bills[0])
-print(bills[-1])
-print(bills[1:4])
-print(bills[:3])
-print(bills[::2])
+# print(bills[0])
+# print(bills[-1])
+# print(bills[1:4])
+# print(bills[:3])
+# print(bills[::2])
 
-high = bills[bills>5000]
-print(high)
-print(bills[[0,2,4]])
+# high = bills[bills>5000]
+# print(high)
+# print(bills[[0,2,4]])
+
+#arrange 
+patient_ids = np.arange(1,11) #[0,1,2,3,4,5,6,7,8,9]
+print(patient_ids)
+age_range = np.linspace(0,100,5) #[0,25,50,75,100]
+print(age_range)
+monthly_admission = np.zeros(12)
+monthly_admission[0] = 54
+monthly_admission[1] = 45
+print(monthly_admission)
+print(monthly_admission[0])
+print(monthly_admission[1])
+target = np.full(6,5000.0) 
+print(target)
